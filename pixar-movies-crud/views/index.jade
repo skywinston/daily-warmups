@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .col-md-6.col-md-offset-3
+    if(movies.length)
+      h1.page-header Your Favorite Pixar movies
+      table.table.table-striped
+        thead
+          tr
+            th Movie title
+            th Year Released
+            th Stars
+        tbody
+          for movie in movies
+            tr
+              td= movie.title
+              td= movie.yearReleased
+              td= movie.stars
+              td
+                a(href="/#{movie._id}/edit") Edit
+                
+      a.btn.btn-primary(href="/new") Add A New Favorite
+    if(!movies.length)
+      h1.page-header Guess What?
+      div.jumbotron  
+        h1 There are no movies yet
+        p You should begin by adding one of your favorite Pixar movies.
+        a.btn.btn-primary(href="/new") Add A New Favorite 

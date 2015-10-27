@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .col-md-6.col-md-offset-3
+    h3.page-header Add a new movie:
+    form(id="new-movie" action="/#{movie._id}/update" method="POST")
+      .form-group
+        label(for="title") Movie Title
+        input.form-control(id='title' name='title' type="text" value="#{movie.title}")
+      .form-group
+        label(for="yearReleased") Year Released
+        input.form-control(id='yearReleased' name='yearReleased' type="number" value="#{movie.yearReleased}")
+      .form-group
+        label(for='stars') Stars
+        select.form-control(id='stars' name='stars' value="#{movie.stars}")
+          option 1
+          option 2
+          option 3
+          option 4
+          option 5
+      .btn-group
+        input.btn.btn-success(type='submit' value="Update")
+        a.btn.btn-danger(href='/#{movie._id}/delete') Remove
