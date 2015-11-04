@@ -17,12 +17,14 @@ function pileLogs(gridSize, logCount, inventory){
           console.log(storage[i][j]);
           storage[i][j]++;
           count--;
+          if (count === 0){
+            return storage;
+          }
         }
       }
     }
     currentLowest++
   }
-  return storage;
 }
 
 
