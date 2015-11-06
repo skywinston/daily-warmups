@@ -15,3 +15,11 @@ describe('longestSubReduce', function(){
     expect(code.longestSubReduce("* **")).toEqual(2);
   });
 });
+
+describe('longestSubRecursive', function(){
+  it('returns the length of the longest consecutive string of *', function(){
+    expect(code.longestSubRecursive("*** *** **")).toEqual(3);
+    expect(code.longestSubRecursive("*** *** **** *")).toEqual(4);
+    expect(code.longestSubRecursive("* **")).toEqual(2);
+  });
+});
