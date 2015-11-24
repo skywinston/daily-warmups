@@ -10,10 +10,16 @@ class Clock {
   }
 
   public String getTime(){
-    String hourDisplay = hours < 10 ? "0" + Integer.toString(hours) : Integer.toString(hours);
-    String minuteDisplay = minutes < 10 ? "0" + Integer.toString(minutes) : Integer.toString(minutes);
-    String secondDisplay = seconds < 10 ? "0" + Integer.toString(seconds) : Integer.toString(seconds);
+
+    String hourDisplay = formatNumber(hours);
+    String minuteDisplay = formatNumber(minutes);
+    String secondDisplay = formatNumber(seconds);
     return hourDisplay + ":" + minuteDisplay + ":" + secondDisplay;
+  }
+
+  private String formatNumber(int num){
+    String string = Integer.toString(num);
+    return num < 10 ? "0" + string : string;
   }
 
   public void tick(){
